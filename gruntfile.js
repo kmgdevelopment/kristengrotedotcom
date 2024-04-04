@@ -74,11 +74,20 @@ module.exports = function(grunt) {
                     spawn: true // forces watch to bail out completely on an error
                 }
             },
-            js: {
+            ts: {
                 files: [
                     'src/js/**/*.ts'
                 ],
                 tasks: ['browserify'],
+                options: {
+                    spawn: true
+                }
+            },
+            js: {
+                files: [
+                    'src/js/bundle.js'
+                ],
+                tasks: ['uglify'],
                 options: {
                     spawn: true
                 }

@@ -56,6 +56,7 @@ function FeaturedProject($options) {
         $videoTag = "
             <video
                 muted
+                playsinline
                 preload=\"auto\"
                 poster=\"/assets/img/ui/video-poster.webp\"
                 title=\"${heading} interactions on desktop\"

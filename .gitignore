@@ -2,5 +2,6 @@
 .ddev
 .tscache
 .htaccess
+.htaccess.PROD
 node_modules
 README.local.txt
