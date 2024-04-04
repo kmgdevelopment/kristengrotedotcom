@@ -1,0 +1,115 @@
+@use "utils";
+@use "settings";
+@use "sass:math";
+@use "sass:map";
+
+.layout-home {
+    $left-panel-w: 40%;
+    $right-panel-w: 60%;
+    width: 100%;
+    .layout-home-header,
+    .layout-home-main,
+    .layout-home-footer {
+        width: 100%;
+        position: relative;
+        .section-container {
+            @include utils.media-screen("m") {
+                max-width: map.get(settings.$media, "screen", "m");
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
+    .layout-home-header {
+        // prevent white gap between sloped edge sections
+        background-color: map.get(settings.$colors,"template");
+        transition: background-color .5s ease;
+        border-bottom: 1px solid transparent;
+        margin-bottom: -1px;
+        @include utils.media-screen("l") {
+            background-color: map.get(settings.$colors,"dark");
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: $left-panel-w;
+            height: 100vh;
+            overflow: hidden auto;
+        }
+        * {
+            color: map.get(settings.$colors,"light");
+        }
+        // hide sloped edge on large screens
+        .sloped-edge-bottom {
+            @include utils.media-screen("l") {
+                margin-bottom: 0; 
+            }
+            &:after {
+                @include utils.media-screen("l") {
+                    display: none;
+                }
+            }
+        }
+        .section-container {
+            @include utils.media-screen("l") {
+                max-width: settings.$grid-max-width * (math.div($left-panel-w, 100%));
+                margin-left: auto;
+                margin-right: 0;
+            }
+        }
+    }
+    .layout-home-main,
+    .layout-home-footer {
+        @include utils.media-screen("l") {
+            width: $right-panel-w;
+            top: 0;
+            left: $left-panel-w;
+        }
+        .section-container {
+            @include utils.media-screen("l") {
+                max-width: settings.$grid-max-width * (math.div($right-panel-w, 100%));
+                margin: 0;
+            }
+        }
+    }
+    .layout-home-main {
+        background-color: map.get(settings.$colors, "template");
+        transition: background-color .5s ease;
+        .page-intro {
+            padding: 6rem 0;
+        }
+    }
+    .layout-home-footer {
+        background-color: map.get(settings.$colors, "template");
+        transition: background-color .5s ease;
+        // enclose collapsed sloped edge margin to fill in bg color
+        border-top: 1px transparent solid; 
+        margin-top: -1px;
+    }   
+    
+    .accordion {
+        .accordion-control {
+            @include utils.media-screen("l") {
+                display: none;
+            }
+        }
+        .accordion-body {
+            @include utils.media-screen("l") {
+                visibility: visible;
+                max-height: none;
+            }
+        }
+    }
+
+    .featured-project {
+        padding: 2rem 0 3rem 0;
+        .taglist {
+            li {
+                background-color: map.get(settings.$colors, 'template-dark');
+            }
+        }
+    }
+
+    .c-bg-template-dark .taglist li {
+        background-color: #{map.get(settings.$colors, "template")}
+    }
+}

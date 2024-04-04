@@ -1,0 +1,20 @@
+@use "sass:map";
+@use "settings";
+
+:root {
+	--template-hue: #{map.get(settings.$colors, "primary-hue")};
+}
+
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+html {
+	font-size: settings.$base-font-size;
+	line-height: settings.$base-line-height;
+}
+body {
+	color: map.get(settings.$colors, "body");
+	font-family: settings.$font-body;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+}

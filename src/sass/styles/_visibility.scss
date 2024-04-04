@@ -1,0 +1,11 @@
+@use "utils";
+
+.visually-hidden {
+    @include utils.visually-hidden;
+}
+.show-l {
+    display: none;
+    @include utils.media-screen("l") {
+        display: block;
+    }
+}

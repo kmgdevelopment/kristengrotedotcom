@@ -1,0 +1,58 @@
+@use "utils";
+@use "settings";
+@use "sass:map";
+
+.accordion {
+    .accordion-control {
+        position: relative;
+        &:before {
+            content: "";
+            display: block;
+            width: calc(100% + (settings.$grid-gutter-size * 2));
+            border-top: 1px solid rgba(white,.25);
+            position: absolute;
+            top: 8px;
+            left: -(settings.$grid-gutter-size);
+            z-index: 0;
+            @include utils.media-screen("m") {
+                width: 100%;
+                left: 0;
+            }
+        }
+        button {
+            @include utils.reset-button;
+            background-color: map.get(settings.$colors, "dark");
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+            padding: 0 1em;
+            position: relative;
+            z-index: 10;
+            height: 16px;
+            font-weight: 600;
+            &:hover {
+                cursor: pointer;
+            }
+            span {
+                width: 10px;
+                height: 10px;
+                display: inline-block;
+                margin-left: .5em;
+            }
+        }
+    }
+    .accordion-body {
+        visibility: hidden;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height .5s ease, visibility 0s .5s;
+        .accordion-body-content {
+            padding-top: settings.$grid-gutter-size;
+        }
+        &.open {
+            visibility: visible;
+            max-height: 700px;
+            transition: max-height .5s ease, visibility 0s 0s;
+        }
+    }
+}

@@ -1,0 +1,9 @@
+@use 'settings';
+@use "sass:math";
+@use "utils/strip-unit";
+
+// https://css-tricks.com/snippets/sass/correctly-adding-unit-number/
+@function rem($pxValue) {
+    @return math.div(strip-unit.stripUnit($pxValue), strip-unit.stripUnit(settings.$base-font-size)) + 0rem;
+}
+

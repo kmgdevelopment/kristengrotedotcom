@@ -1,0 +1,126 @@
+@use "settings";
+@use "utils";
+@use "sass:map";
+
+.featured-project {
+    * {
+        color: map.get(settings.$colors, 'light');
+    }
+    > section {
+        margin-bottom: 2rem;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .header-highlight {
+        small {
+            color: map.get(settings.$colors, 'body');
+        }
+        margin-bottom: 1rem;
+    }
+    .devices {
+        position: relative;
+        .desktop {
+            background-image: url(settings.$img-path + '/imac.svg');
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+            width: 100%;
+            position: relative;
+            margin-bottom: 2rem;
+            @include utils.media-screen("m") {
+                width: 80%;
+                margin-bottom: 0;
+            }
+            &:before {
+                content: "";
+                display: block;
+                width: 100%;
+                padding-bottom: 79.85%;
+            }
+            img, video {
+                position: absolute;
+                top: 5.7%;
+                left: 4.5%;
+                width: 90.9%;
+                display: block;
+            }
+            img {
+                // fix blurry rendering in Chrome
+                // https://stackoverflow.com/q/78270598/532742
+                transform: translateZ(0);
+            }
+        }
+        .mobile {
+            width: 75%;
+            margin: 0 auto;
+            @include utils.media-screen("m") {
+                width: 44%;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+            }
+            img, picture {
+                display: block;
+                // fix blurry rendering in Chrome
+                // https://stackoverflow.com/q/78270598/532742
+                transform: translateZ(0);
+                margin: 0 auto;
+                @include utils.media-screen("m") {
+                    margin: 0;
+                }
+            }
+        }
+    }
+    .summary {
+       p {
+        font-size: utils.rem(20px);
+       }
+       .links {
+            @include utils.reset-list;
+            display: flex;
+            margin: 0 -0.5em;
+            @include utils.media-screen("l") {
+                justify-content: center;
+            }
+            li {
+                padding: 0 .5em;
+            }
+            a {
+                @include utils.reset-link;
+                background-color: map.get(settings.$colors,"dark");
+                font-weight: bold;
+                padding: .5em .75em;
+                line-height: 1;
+                display: flex;
+                align-items: center;
+                svg {
+                    fill: map.get(settings.$colors,"light");
+                    width: 15px;
+                    height: 15px;
+                    display: inline-block;
+                    margin-right: .5em;
+                }
+            }
+       }
+    }
+    .taglist {
+        @include utils.media-screen("l") {
+            display: none;
+        }
+    }
+    &.reverse {
+        .devices {
+            .desktop {
+                @include utils.media-screen("m") {
+                    margin-left: auto;
+                }
+            }
+            .mobile {
+                @include utils.media-screen("m") {
+                    right: auto;
+                    left: 0;
+                }
+            }
+        }
+    }
+}

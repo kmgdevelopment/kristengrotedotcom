@@ -1,0 +1,7 @@
+@use "settings/typography";
+@use "utils/strip-unit";
+@use "sass:math";
+
+$grid-max-width: 1440px;
+$grid-gutter-size-px: 30px;
+$grid-gutter-size: math.div(strip-unit.stripUnit($grid-gutter-size-px), strip-unit.stripUnit(typography.$base-font-size)) + 0rem;

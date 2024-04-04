@@ -1,0 +1,11 @@
+@use "settings";
+
+.section {
+    .section-gutter {
+        padding-left: settings.$grid-gutter-size;
+        padding-right: settings.$grid-gutter-size;
+    }
+    .section-container {
+        max-width: settings.$grid-max-width;
+    }
+}

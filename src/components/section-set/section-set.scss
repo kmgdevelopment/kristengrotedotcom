@@ -1,0 +1,10 @@
+@use "settings";
+
+.section-set {
+    > section {
+        margin-bottom: settings.$grid-gutter-size;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

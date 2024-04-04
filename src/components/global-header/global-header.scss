@@ -1,0 +1,20 @@
+@use "settings";
+@use "utils";
+
+.global-header {
+    padding-top: settings.$grid-gutter-size;
+    padding-bottom: settings.$grid-gutter-size * 2;
+    @include utils.media-screen("l") {
+        padding-bottom: settings.$grid-gutter-size;
+    }
+    .page-intro {
+        padding: 0;
+        p {
+            font-size: utils.rem(20px);
+            color: rgba(white, .7);
+        }
+        @include utils.media-screen("l") {
+            display: none;
+        }
+    }
+}

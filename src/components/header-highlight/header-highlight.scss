@@ -1,0 +1,23 @@
+@use "settings";
+@use "utils";
+@use "sass:map";
+
+.header-highlight {
+    small {
+        display: block;
+        font-size: utils.rem(14px);
+        position: relative;
+    }
+    .h {
+        background-color: map.get(settings.$colors, "dark");
+        color: white;
+        display: inline;
+        font-size: utils.rem(34px);
+        position: relative;
+        z-index: 10;
+        padding: 0 .25em;
+        // prevents cut-off padding on line breaks
+        box-decoration-break: clone;
+        -webkit-box-decoration-break: clone;
+    }
+}

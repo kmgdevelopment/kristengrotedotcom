@@ -1,0 +1,17 @@
+@use "sass:map";
+@use "../settings";
+
+table {
+    margin-bottom: 1.5em;
+    width: 100%;
+    border-collapse: collapse;
+    td,th {
+      border: 1px solid map.get(settings.$colors, "chrome", "medium");
+      vertical-align: top;
+      padding: 0.5em;
+    }
+    th {
+      background-color: map.get(settings.$colors, "chrome", "light");
+      text-align: left;
+    }
+  }

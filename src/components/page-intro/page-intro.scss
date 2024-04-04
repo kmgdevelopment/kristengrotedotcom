@@ -1,0 +1,15 @@
+@use "utils";
+@use "settings";
+@use "sass:map";
+
+.page-intro {
+    p {
+        font-size: utils.rem(26px);
+        text-align: center;
+        font-family: "Playfair Display", Georgia, serif;
+        font-weight: 500;
+        color: map.get(settings.$colors, 'template-light');
+        transition: color .5s ease;
+        margin-bottom: 0;
+    }
+}

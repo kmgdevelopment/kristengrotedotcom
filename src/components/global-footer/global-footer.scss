@@ -1,0 +1,29 @@
+@use "utils";
+@use "settings";
+@use "sass:map";
+
+.global-footer {
+    display: flex;
+    font-size: utils.rem(14px);
+    color: map.get(settings.$colors,"light");
+    padding: settings.$grid-gutter-size 0;
+    .view-source {
+        margin-left: auto;
+        a {
+            color: map.get(settings.$colors,"light");
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        svg {
+            width: 12px;
+            height: 12px;
+            fill: map.get(settings.$colors,"light");
+            margin-right: .5em;
+        }
+    }
+    p {
+        margin: 0;
+        line-height: 1;
+    }
+}

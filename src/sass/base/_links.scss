@@ -1,0 +1,14 @@
+@use "sass:map";
+@use "../settings";
+
+a {
+	color: #{map.get(settings.$colors, "links", "link")};
+	text-decoration: underline;
+	&:hover,
+	&:focus {
+		color: #{map.get(settings.$colors, "links", "hover")};
+	}
+	&:visited {
+		color: #{map.get(settings.$colors, "links", "visited")};
+	}
+}

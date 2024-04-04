@@ -1,0 +1,6 @@
+.DS_Store
+.ddev
+.tscache
+.htaccess
+node_modules
+README.local.txt

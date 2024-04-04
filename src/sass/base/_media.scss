@@ -1,0 +1,15 @@
+@use "../utils/media";
+
+// Hook element for JS
+#media {
+  font-family: small;
+  @include media.media-screen("m") {
+    font-family: medium;
+  }
+  @include media.media-screen("l") {
+    font-family: large;
+  }
+  @include media.media-screen("xl") {
+    font-family: xlarge;
+  }
+}

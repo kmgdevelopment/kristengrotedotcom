@@ -1,0 +1,19 @@
+@use "settings/media" as settings;
+@use "sass:map";
+
+@mixin media-screen($size) {
+    $min-width: 1px;
+
+    @if ($size == "m") {
+        $min-width: map.get(settings.$media, "screen", "m");
+    }
+    @if ($size == "l") {
+        $min-width: map.get(settings.$media, "screen", "l");
+    }
+    @if ($size == "xl") {
+        $min-width: map.get(settings.$media, "screen", "xl");
+    }
+    @media screen and (min-width: $min-width) {
+        @content;
+    }
+}

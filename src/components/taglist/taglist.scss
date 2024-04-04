@@ -1,0 +1,33 @@
+@use "utils";
+@use "settings";
+@use "sass:map";
+
+.taglist {
+    .h {
+        font-size: utils.rem(18px);
+        font-family: "Source Sans 3", Arial, Helvetica, sans-serif;
+    }
+    ul {
+        @include utils.reset-list;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -0.25em;
+        li {
+            font-family: "Quicksand", Arial, sans-serif;
+            font-weight: 700;
+            display: block;
+            padding: 0.25em 0.75em;
+            margin: 0 0.25em 0.25em 0.25em;
+            background-color: map.get(settings.$colors, "template");
+            transition: background-color .5s ease;
+            border-radius: 50px;
+            line-height: 1;
+            color: white;
+            font-size: utils.rem(14px);
+            &.disabled {
+                opacity: .4;
+                transition: opacity .5s ease;
+            }
+        }
+    }
+}

@@ -1,0 +1,16 @@
+{
+  "devDependencies": {
+    "babelify": "^10.0.0",
+    "grunt": "^1.6.1",
+    "grunt-babel": "^8.0.0",
+    "grunt-browserify": "^6.0.0",
+    "grunt-contrib-sass": "^2.0.0",
+    "grunt-contrib-uglify": "^5.2.2",
+    "grunt-contrib-watch": "^1.1.0",
+    "normalize.css": "^8.0.1",
+    "tsify": "^5.0.4",
+    "typescript": "^5.3.3",
+    "uglify-js": "^3.17.4"
+  },
+  "scripts": {}
+}

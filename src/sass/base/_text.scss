@@ -1,0 +1,9 @@
+@use "sass:map";
+@use "../settings";
+
+p, ul, ol {
+  margin: 0 0 1.5em 0;
+}
+code {
+  background-color: map.get(settings.$colors, "chrome", "light");
+}

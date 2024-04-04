@@ -1,0 +1,87 @@
+@use "settings";
+@use "utils";
+@use "sass:map";
+
+.profile {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    @include utils.media-screen("l") {
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: left;
+    }
+    > * {
+        width: 100%;
+    }
+    .media {
+        flex-shrink: 0;
+        margin-bottom: utils.rem(30px);
+        @include utils.media-screen("l") {
+            width: 125px;
+            margin-bottom: 0;
+            margin-right: settings.$grid-gutter-size;
+        }
+        img {
+            border-radius: 100px;
+            display: block;
+            margin: 0 auto;
+            @include utils.media-screen("l") {
+                margin: 0;
+            }
+        }
+    }
+    .text {
+        text-align: center;
+        @include utils.media-screen("l") {
+            text-align: left;
+        }
+        .h {
+            font-size: utils.rem(44px);
+            margin-bottom: 0;
+            margin-top: -0.3em;
+        }
+        .subhead {
+            font-family: "Source Sans 3", Arial, Helvetica, sans-serif;
+            font-weight: 400;
+            font-size: utils.rem(20px);
+            margin-bottom: 0;
+        }
+        > p {
+            margin-bottom: 0;
+        }
+    }
+    .socials {
+        margin-top: utils.rem(15px);
+        ul {
+            @include utils.reset-list;
+            display: flex;
+            justify-content: center;
+            @include utils.media-screen("l") {
+                justify-content: left;
+            }
+            margin: 0 -0.35em;
+            a, svg {
+                width: 20px;
+                height: 20px;
+                display: block;
+            }
+            li {
+                padding: 0 .35em;
+            }
+            a {
+                svg {
+                    fill: map.get(settings.$colors, "template");
+                    transition: fill .5s ease;
+                }
+                &:hover {
+                    svg {
+                        fill: map.get(settings.$colors, "light");
+                    }
+                }
+            }
+            
+        }
+    }
+}

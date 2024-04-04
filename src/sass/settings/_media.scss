@@ -1,0 +1,9 @@
+@use "grid";
+
+$media: (
+    "screen": (
+        "m": 768px,
+        "l": 1025px,
+        "xl": grid.$grid-max-width + 1px
+    )
+);

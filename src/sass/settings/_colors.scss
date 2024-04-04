@@ -1,0 +1,42 @@
+@use "sass:color";
+
+$_color-dark: #282828;
+$_color-light: #ffffff;
+$_color-primary: #b3701a;
+$_color-primary-hue: 34;
+$_color-link: $_color-primary;
+$_color-template: hsl(var(--template-hue), 75%, 40%);
+$_color-template-dark: hsl(var(--template-hue), 75%, 28%);
+$_color-template-light: hsl(var(--template-hue), 100%, 81%);
+
+$colors: (
+    "dark": $_color-dark,
+    "light": $_color-light,
+    "primary": $_color-primary,
+    "primary-hue": $_color-primary-hue,
+    "body": $_color-dark,
+    "template": $_color-template,
+    "template-dark": $_color-template-dark,
+    "template-light": $_color-template-light,
+    "chrome": (
+        "light": #EEEEEE, // backgrounds
+        "medium": #DDDDDD, // borders and dividers
+        "dark": #CCCCCC // UI elements
+    ),
+    "links": (
+        "link": $_color-template,
+        "hover": $_color-template-dark,
+        "visited": $_color-template-dark
+    ),
+    "error": #FF0000,
+    "social": (
+        "x": #0f1419,
+        "facebook": #3b5998,
+        "linkedin": #0077B5,
+        "tiktok": #FE2C55,
+        "youtube": #FF0000,
+        "vimeo": #1ab7ea,
+        "github": #1f2328,
+        "stack-overflow": #F48024
+    )
+);

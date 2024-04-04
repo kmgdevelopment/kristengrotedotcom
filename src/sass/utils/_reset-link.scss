@@ -1,0 +1,6 @@
+@mixin reset-link {
+    text-decoration: none;
+    &:link, &:hover, &:visited {
+        color: unset;
+    }
+}
