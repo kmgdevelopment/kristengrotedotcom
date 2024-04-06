@@ -6,6 +6,9 @@ function DocumentHead() {
             <meta charset=\"UTF-8\">
             <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
             <title>Front-End Web Development by Kristen Grote</title>
+            <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
+            <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
+            <link href=\"https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap\" rel=\"stylesheet\">
             <link rel=\"stylesheet\" href=\"/assets/css/main.css\" />
             <meta name=\"robots\" content=\"noindex,nofollow,noarchive\" />
         </head>

@@ -12,6 +12,7 @@ interface ScrollTrigger {
 }
 
 export default function scrollTrigger(options: ScrollTrigger) {
+    const resetThreshold = 20;
     let currentSection: HTMLElement | undefined;
     
     let scrollTriggerSections = options.elementList.map( (element) => {
@@ -30,7 +31,7 @@ export default function scrollTrigger(options: ScrollTrigger) {
         // don't activate the sparkles until the user
         // starts scrolling / reset to default if they
         // scroll back to the top
-        if(window.scrollY <= 20 && currentSection !== undefined) {
+        if(window.scrollY <= resetThreshold && currentSection !== undefined) {
             options.resetFunc();
             currentSection = undefined;
         } 
@@ -44,7 +45,11 @@ export default function scrollTrigger(options: ScrollTrigger) {
         
                     // re-run these effects every 
                     // time the section comes into view (scroll down & reverse)
-                    if(topPos <= viewportThreshold && bottomPos > viewportThreshold) {
+                    if(
+                        window.scrollY > resetThreshold 
+                        && topPos <= viewportThreshold 
+                        && bottomPos > viewportThreshold
+                    ) {
                         options.toggleFunc(section.element);
                         
                         // set this as the current section
@@ -53,7 +58,11 @@ export default function scrollTrigger(options: ScrollTrigger) {
         
                     // only run these effects once 
                     // when the section comes into view (scroll down only)
-                    if(!section.singleEffectsTriggered && topPos <= viewportThreshold) {
+                    if(
+                        window.scrollY > resetThreshold
+                        && !section.singleEffectsTriggered 
+                        && topPos <= viewportThreshold
+                    ) {
                         options.singleFunc(section.element);
         
                         section.singleEffectsTriggered = true;
