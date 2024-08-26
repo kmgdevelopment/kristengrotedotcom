@@ -1,0 +1,16 @@
+{# 
+    heading: string
+    tags: array
+ #}
+{% macro Taglist(heading, tags) %}
+    
+    <div class="taglist">
+        <h6 class="h">{{ heading }}</h6>
+        <ul>
+            {% for item in tags %}
+                <li data-tag="{{ item|kebab }}">{{ item }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+{% endmacro %}

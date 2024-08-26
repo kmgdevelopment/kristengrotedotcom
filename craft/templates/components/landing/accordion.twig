@@ -1,0 +1,21 @@
+{# 
+    data: array
+        label: string
+        content: string
+ #}
+{% macro Accordion(data) %}
+    <div class="accordion">
+        {% for item in data %}
+            <div class="accordion-item">
+                <div class="accordion-control">
+                    <button>{{ item.label }} <span>+</span></button>
+                </div>
+                <div class="accordion-body">
+                    <div class="accordion-body-content">
+                        {{ item.content|raw }}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endmacro %}

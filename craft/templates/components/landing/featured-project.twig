@@ -1,0 +1,141 @@
+{# 
+    options: array
+        heading: string
+        hue: string
+        summary: string
+        skillsList: array
+        videoFilename?: string
+        desktopImgName?: string
+        mobileImgName?: string
+        sourceUrl?: string
+        liveUrl?: string
+        layout?: string
+        lazyload?: string
+ #}
+{% macro FeaturedProject(options) %}
+    {% from "components/landing/header-highlight" import HeaderHighlight %}
+    {% from "components/landing/taglist" import Taglist %}
+
+    {% set heading = options.heading %}
+    {% set hue = options.hue %}
+    {% set summary = options.summary %}
+    {% set skillsList = options.skillsList %}
+    {% set videoFilename = options.videoFilename|default(false) %}
+    {% set desktopImgName = options.desktopImgName|default(false) %}
+    {% set mobileImgName = options.mobileImgName %}
+    {% set sourceUrl = options.sourceUrl|default(false) %}
+    {% set liveUrl = options.liveUrl|default(false) %}
+    {% set layout = options.layout|default(false) %}
+    {% set lazyload = options.lazyload|default(false) %}
+
+    {% set loading = lazyload ? 'lazy' : 'eager' %}
+
+    {# HTML Classes #}
+    {% set classList = ['featured-project'] %}
+    {% if videoFilename %}{% set classList = classList|merge(['video']) %}{% endif %}
+    {% if layout %}{% set classList = classList|merge([layout]) %}{% endif %}
+
+    {# Tags data attribute #}
+    {% set tagData = [] %}
+    {% for item in skillsList %}
+        {% set tagData = tagData|merge([item|kebab]) %}
+    {% endfor %}
+
+    <div 
+        class="{{ classList|join(' ') }}" 
+        data-hue="{{ hue }}"
+        data-tags="{{ tagData|join(',') }}"
+    >
+        <section>
+            {{ HeaderHighlight(heading, 'Featured Project') }}
+
+            <div class="devices">
+                <div class="desktop">
+                    {% if videoFilename %}
+                        <video
+                            muted
+                            playsinline
+                            preload="auto"
+                            poster="/assets/img/ui/video-poster.webp"
+                            title="{{ heading }} interactions on desktop"
+                        >
+                            <source src="/assets/img/{{ videoFilename }}.webm" type="video/webm">
+                            <source src="/assets/img/{{ videoFilename }}.mp4" type="video/mp4">
+                        </video>
+
+                    {% elseif desktopImgName %}
+                        <picture>
+                            <source
+                                srcset="/assets/img/{{ desktopImgName }}_l_2x.webp 2x"
+                                media="(min-width: 768px)"
+                            />
+                            <source
+                                srcset="/assets/img/{{ desktopImgName }}_l.webp"
+                                media="(min-width: 768px)"
+                            />
+                            <source
+                                srcset="/assets/img/{{ desktopImgName }}_2x.webp 2x"
+                                media="(max-width: 767px)"
+                            />
+                            <img 
+                                src="/assets/img/{{ desktopImgName }}.webp" 
+                                alt="{{ heading }} on desktop"
+                                width="320"
+                                height="180"
+                                loading="{{ loading }}"
+                            />
+                        </picture>
+                    {% endif %}
+                </div>
+                <div class="mobile">
+                    <picture>
+                        <source
+                            srcset="/assets/img/{{ mobileImgName }}_l_2x.webp 2x"
+                            media="(min-width: 412px)"
+                        />
+                        <source
+                            srcset="/assets/img/{{ mobileImgName }}_l.webp"
+                            media="(min-width: 412px)"
+                        />
+                        <source
+                            srcset="/assets/img/{{ mobileImgName }}_2x.webp 2x"
+                            media="(max-width: 411px)"
+                        />
+                        <img 
+                            src="/assets/img/{{ mobileImgName }}.webp" 
+                            alt="{{ heading }} on tablet and phone"
+                            width="264"
+                            height="270"
+                            loading="{{ loading }}"
+                        />
+                    </picture>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="summary">
+                <p>{{ summary }}</p>
+                
+                {% if sourceUrl and liveUrl %}
+                    <ul class="links">
+                        <li>
+                            <a href="{{ liveUrl }}">
+                                <svg><use href="/assets/img/ui/icons/global/symbol-defs.svg#icon-open"></svg>
+                                See it Live
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ sourceUrl }}">
+                                <svg><use href="/assets/img/ui/icons/social/symbol-defs.svg#icon-github"></svg>
+                                View Source
+                            </a>
+                        </li>
+                    </ul>
+                {% endif %}
+            </div>
+        </section>
+        <section>
+            {{ Taglist('Skills Used:', skillsList) }}
+        </section>
+    </div>
+{% endmacro %}

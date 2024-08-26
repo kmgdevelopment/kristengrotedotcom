@@ -1,0 +1,11 @@
+{# 
+    heading: string
+    eyebrow: string
+ #}
+{% macro HeaderHighlight(heading, eyebrow) %}
+    <div class="header-highlight">
+        <small>{{ eyebrow }}</small>
+        <h3 class="h">{{ heading }}</h3>
+    </div>
+{% endmacro %}
+

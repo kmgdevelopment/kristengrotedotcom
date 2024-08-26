@@ -5,3 +5,4 @@
 .htaccess.PROD
 node_modules
 README.local.txt
+craft/web/cpresources/*
