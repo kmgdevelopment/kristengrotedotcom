@@ -6,3 +6,7 @@
 node_modules
 README.local.txt
 craft/web/cpresources/*
+.env.prod
+.vscode
+# production symlink
+public
