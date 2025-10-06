@@ -1,4 +1,4 @@
-dateModified: 1745005585
+dateModified: 1759710353
 email:
   fromEmail: kristen@kristengrote.com
   fromName: kristengrote.com
@@ -11,7 +11,7 @@ system:
   edition: solo
   live: true
   name: kristengrote.com
-  schemaVersion: 5.7.0.3
+  schemaVersion: 5.8.0.3
   timeZone: America/Los_Angeles
 users:
   allowPublicRegistration: false
