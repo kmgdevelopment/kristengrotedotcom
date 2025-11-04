@@ -1,0 +1,40 @@
+color: null
+description: null
+fieldLayouts:
+  6798903d-40cd-4b8f-99a2-57908062677a:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-10-15T22:53:46+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: e82aa7bd-7583-44f0-83cd-461c119d8ea1 # Body Image
+            handle: null
+            includeInCards: false
+            instructions: 'Full-width retina width: 1572px. Template automatically halves inline image width. '
+            label: __blank__
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 587b6dab-ad8a-4b68-b060-18e8f593e6e8
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: dbecf4c4-2343-4f6d-b83c-6f230b486dad
+        userCondition: null
+handle: blogBodyImage
+hasTitleField: false
+icon: file-image
+name: 'Blog Body Image'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

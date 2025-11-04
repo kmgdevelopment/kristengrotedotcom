@@ -1,0 +1,9 @@
+$base-font-size: 16px;
+
+:root {
+    --base-font-size: #{$base-font-size};
+    --base-line-height: 1.5;
+    --font-body: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-headings: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-headings-weight: 700;
+}

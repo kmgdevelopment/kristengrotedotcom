@@ -1,0 +1,14 @@
+html {
+	font-size: var(--base-font-size);
+	line-height: var(--base-line-height);
+}
+body {
+	background-color: var(--color-bg);
+	color: var(--color-body);
+	font-family: var(--font-body);
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+}
+a {
+    color: var(--color-primary);
+}

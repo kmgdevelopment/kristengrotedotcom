@@ -1,0 +1,32 @@
+@use "utils";
+
+.card-preview {
+    display: block;
+    border: 1px solid var(--color-chrome-medium);
+    border-radius: 0 30px 0 30px;
+    padding: var(--grid-gutter);
+    text-decoration: none;
+    transition: background-color .3s ease;
+    &:link,
+    &:hover,
+    &:visited {
+        color: var(--color-body);
+    }
+    &:hover {
+        background-color: var(--color-chrome-light);
+    }
+    .h {
+        font-size: utils.rem(22);
+        margin-bottom: 0;
+    }
+    .date {
+        color: var(--color-chrome-dark);
+    }
+    .button {
+        margin-top: 1.5rem;
+    }
+    .summary {
+        margin-top: 1rem;
+        margin-bottom: 0;
+    }
+}

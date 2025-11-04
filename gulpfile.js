@@ -93,7 +93,7 @@ const compileTs = () => {
     .pipe(browserSync.stream());
 }
 
-const syncBrowser = () => {
+const syncBrowser = (done) => {
     browserSync.init({
         server: {
             baseDir: "./dist"
@@ -112,17 +112,14 @@ const syncBrowser = () => {
 
     // Watch all HTML, JS, and CSS files in dist and reload browser on change
     watch(['dist/**/*.html', 'dist/**/*.js', 'dist/**/*.css']).on('change', browserSync.reload);
+    
+    done();
 }
 
 
 exports.compileTs = compileTs;
 exports.compileSass = compileSass;
 exports.updateComponentsIndex = updateComponentsIndex;
+exports.syncBrowser = syncBrowser;
 
-exports.default = () => {
-    updateComponentsIndex(() => {
-        compileTs().on('end', () => {
-            syncBrowser();
-        });
-    });
-}
+exports.default = series(updateComponentsIndex, compileTs, syncBrowser);

@@ -1,0 +1,148 @@
+color: null
+description: null
+fieldLayouts:
+  e85f0d6f-34e2-4871-8900-b80f9b5f150d:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2025-10-06T21:42:56+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: c57f68a7-4d69-4f3e-a2b5-15a4b5f40a7d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-10-21T21:31:39+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 01803952-b92e-41d6-821d-f86351729aa0 # Blog Series
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 37b69a5b-2720-445a-8a5a-904313f62123
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-10-21T21:36:30+00:00'
+            editCondition: null
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\RelationalFieldConditionRule
+                  fieldUid: 01803952-b92e-41d6-821d-f86351729aa0 # Blog Series
+                  layoutElementUid: 37b69a5b-2720-445a-8a5a-904313f62123
+                  operator: notempty
+                  uid: fb72b595-3069-4f7f-8955-68da66d1df87
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: 3923b11d-8218-48ca-9ded-a01986758ba5 # Plain Text, Single Line
+            handle: seriesSubtitle
+            includeInCards: false
+            instructions: null
+            label: 'Series Subtitle'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b4c15031-659c-450d-ba24-6e5d7a225afa
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-10-11T22:59:25+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: d468b09c-d9d5-4249-85c2-742dcb0fb4d5 # Post Summary
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 25474026-8348-4bff-b1bf-0caef6287f49
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-10-13T21:28:56+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 90f462df-4bab-488f-982f-f28421852073 # Social Preview Image
+            handle: null
+            includeInCards: false
+            instructions: 1200×630
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: bc57ac37-d7e4-4960-b2e8-be4474a5d3b5
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-10-06T21:44:15+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 31a4ec02-f351-4568-b773-6ef74b90f279 # Blog Body
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: Body
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6e8ef99e-3d95-4852-9599-4c690c723d62
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: ab37cfb3-97cc-478a-b385-24fa221e1be0
+        userCondition: null
+handle: blog
+hasTitleField: true
+icon: null
+name: Blog
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

@@ -1,0 +1,7 @@
+@use "utils";
+
+.layout-grid {
+    @include utils.reset-list;
+    display: grid;
+    gap: var(--grid-gutter);
+}

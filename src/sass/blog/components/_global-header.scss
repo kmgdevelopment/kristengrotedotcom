@@ -1,0 +1,9 @@
+@use "utils";
+
+header.global {
+    padding: var(--grid-gutter) 0;
+    .h {
+        font-size: utils.rem(18);
+        color: var(--color-chrome-dark);
+    }
+}

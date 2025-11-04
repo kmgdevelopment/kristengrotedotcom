@@ -1,0 +1,26 @@
+columnSuffix: null
+handle: blogSeries
+instructions: null
+name: 'Blog Series'
+searchable: false
+settings:
+  allowSelfRelations: false
+  branchLimit: null
+  defaultPlacement: end
+  maintainHierarchy: false
+  maxRelations: 1
+  minRelations: 0
+  selectionLabel: 'Select a Series'
+  showCardsInGrid: false
+  showSearchInput: true
+  showSiteMenu: true
+  showUnpermittedEntries: false
+  showUnpermittedSections: false
+  sources:
+    - 'section:f5368513-b1f1-4469-a9ae-dbfcc60fa1fa' # Blog Series
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: list
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Entries

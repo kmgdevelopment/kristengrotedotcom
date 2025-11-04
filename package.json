@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "@types/prismjs": "^1.26.5",
     "browser-sync": "^3.0.4",
     "browserify": "^17.0.1",
     "gulp": "^5.0.1",
@@ -7,6 +8,7 @@
     "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify": "^3.0.2",
     "modern-normalize": "^3.0.1",
+    "prismjs": "^1.30.0",
     "sass": "^1.93.2",
     "tsify": "^5.0.4",
     "typescript": "^5.9.3",

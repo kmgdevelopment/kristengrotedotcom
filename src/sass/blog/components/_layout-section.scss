@@ -1,0 +1,12 @@
+@use "utils";
+@use "settings";
+
+.layout-section {
+    width: 100%;
+    max-width: var(--grid-max-width);
+    margin: 0 auto;
+    padding: 0 var(--grid-gutter);
+    > *:last-child {
+        margin-bottom: 0;
+    }
+}

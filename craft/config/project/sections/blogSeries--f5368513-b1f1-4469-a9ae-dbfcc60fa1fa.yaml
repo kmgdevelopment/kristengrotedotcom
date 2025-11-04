@@ -1,0 +1,28 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: 80470fa0-7557-482b-a9ea-d9ad38a510f2 # Blog Series
+handle: blogSeries
+maxAuthors: 1
+name: 'Blog Series'
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  eb73adb8-d528-42a2-a6ec-9d15818070e7: # kristengrote.com
+    enabledByDefault: true
+    hasUrls: false
+    template: null
+    uriFormat: null
+type: channel

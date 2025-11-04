@@ -2,10 +2,10 @@
     pageIntro: string
  #}
 {% macro GlobalHeader(pageIntro) %}
-    {% from "components/landing/taglist" import Taglist %}
-    {% from "components/landing/profile" import Profile %}
-    {% from "components/landing/accordion" import Accordion %}
-    {% from "components/landing/page-intro" import PageIntro %}
+    {% from "_components/landing/taglist" import Taglist %}
+    {% from "_components/landing/profile" import Profile %}
+    {% from "_components/landing/accordion" import Accordion %}
+    {% from "_components/landing/page-intro" import PageIntro %}
 
     {% set taglists = [
         {

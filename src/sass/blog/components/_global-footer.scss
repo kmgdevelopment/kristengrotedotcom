@@ -1,0 +1,11 @@
+@use "utils";
+
+footer.global {
+    padding: var(--grid-gutter) 0;
+    .copy {
+        margin: 0;
+        color: var(--color-chrome-dark);
+        font-size: utils.rem(12);
+        text-align: center;
+    }
+}

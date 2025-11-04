@@ -1,0 +1,11 @@
+.layout-entry-body {
+    margin-bottom: var(--grid-gutter);
+    .layout-section {
+        > *:not(:last-child) {
+            margin-bottom: 2.5rem;
+        }
+        > * > *:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

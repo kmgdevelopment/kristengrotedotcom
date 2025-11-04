@@ -13,8 +13,8 @@
         lazyload?: string
  #}
 {% macro FeaturedProject(options) %}
-    {% from "components/landing/header-highlight" import HeaderHighlight %}
-    {% from "components/landing/taglist" import Taglist %}
+    {% from "_components/landing/header-highlight" import HeaderHighlight %}
+    {% from "_components/landing/taglist" import Taglist %}
 
     {% set heading = options.heading %}
     {% set hue = options.hue %}

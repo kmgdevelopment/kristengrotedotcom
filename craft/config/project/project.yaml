@@ -1,12 +1,52 @@
-dateModified: 1759710353
+dateModified: 1762285954
 email:
   fromEmail: kristen@kristengrote.com
   fromName: kristengrote.com
   transportType: craft\mail\transportadapters\Sendmail
+fs:
+  local:
+    hasUrls: true
+    name: 'Local Filesystem'
+    settings:
+      path: '@webroot/content'
+    type: craft\fs\Local
+    url: $PRIMARY_SITE_URL/content
 meta:
   __names__:
+    2b197975-ea97-488c-b8aa-9a9f7ff86f90: 'Text Alternative' # Text Alternative
+    3fb5467d-e774-4c49-8d25-3e460d9be2e1: 'Social Preview Images' # Social Preview Images
+    7f558239-c72e-42a3-963e-4e32291ef801: Blog # Blog
+    08a96c61-2694-485d-99c6-36a67f2801a0: 'Main Image' # Main Image
+    29be1242-63cd-436e-92d2-9e4b484d7d17: Simple # Simple
+    31a4ec02-f351-4568-b773-6ef74b90f279: 'Blog Body' # Blog Body
+    59fbcd82-c5af-4738-b72c-34b0b3463f14: Button # Button
+    60eef908-3346-4c7a-abfd-9b230b48a8ff: 'Blog Code Snippet' # Blog Code Snippet
+    87a9d102-046e-444c-a1c1-33b12641482e: 'Main Images' # Main Images
+    90f462df-4bab-488f-982f-f28421852073: 'Social Preview Image' # Social Preview Image
+    722ce8a5-2b63-4bbe-9bb8-f47722788c72: 'Body Images' # Body Images
+    728e0b30-d756-4fea-a84c-057e2ba6b4b6: 'Code Language' # Code Language
+    1412b5ee-cc51-43ba-ab55-0aae456159e0: 'Blog Body Image' # Blog Body Image
+    3923b11d-8218-48ca-9ded-a01986758ba5: 'Plain Text, Single Line' # Plain Text, Single Line
+    40462cbf-7757-45fc-85cb-18ea958c0427: 'Code Snippet' # Code Snippet
+    71665f24-1cc2-4800-902d-41f07a6837f4: 'Button Type' # Button Type
+    80470fa0-7557-482b-a9ea-d9ad38a510f2: 'Blog Series' # Blog Series
+    01803952-b92e-41d6-821d-f86351729aa0: 'Blog Series' # Blog Series
+    5318445f-08de-43ff-84fb-00b826d77c5c: 'Blog Rich Text' # Blog Rich Text
+    91313709-2548-4815-a05b-88789a63a7cb: 'Button Link' # Button Link
+    a8364386-5f17-4c4e-ba4b-424cff469b7b: 'Body Text' # Body Text
+    ab779b9f-394b-460b-9a5f-e4bcdccbdb9c: 'Rich Text' # Rich Text
+    d468b09c-d9d5-4249-85c2-742dcb0fb4d5: 'Post Summary' # Post Summary
     d913d357-03f1-41f2-a6da-a04afb082c6f: kristengrote.com # kristengrote.com
+    e3f5ccdf-819e-4af9-bb78-4435fd721726: Blog # Blog
+    e82aa7bd-7583-44f0-83cd-461c119d8ea1: 'Body Image' # Body Image
     eb73adb8-d528-42a2-a6ec-9d15818070e7: kristengrote.com # kristengrote.com
+    eca95607-1278-410d-a503-9e860b47ec93: 'Public Schema' # Public Schema
+    f5368513-b1f1-4469-a9ae-dbfcc60fa1fa: 'Blog Series' # Blog Series
+plugins:
+  ckeditor:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.0.0.0
 system:
   edition: solo
   live: true

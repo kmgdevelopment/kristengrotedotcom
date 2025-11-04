@@ -1,0 +1,62 @@
+columnSuffix: null
+handle: blogBody
+instructions: null
+name: 'Blog Body'
+searchable: false
+settings:
+  createButtonLabel: 'Add Section'
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - 5318445f-08de-43ff-84fb-00b826d77c5c # Blog Rich Text
+        -
+          - name
+          - 'Rich Text'
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
+          - 60eef908-3346-4c7a-abfd-9b230b48a8ff # Blog Code Snippet
+        -
+          - name
+          - 'Code Snippet'
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
+          - 1412b5ee-cc51-43ba-ab55-0aae456159e0 # Blog Body Image
+        -
+          - name
+          - Image
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
+          - 59fbcd82-c5af-4738-b72c-34b0b3463f14 # Button
+        -
+          - group
+          - General
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: blocks
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

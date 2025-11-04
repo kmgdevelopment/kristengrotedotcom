@@ -1,0 +1,6 @@
+$grid-max-width: 850px; 
+
+:root {
+    --grid-max-width: #{$grid-max-width};
+    --grid-gutter: 2rem;
+}

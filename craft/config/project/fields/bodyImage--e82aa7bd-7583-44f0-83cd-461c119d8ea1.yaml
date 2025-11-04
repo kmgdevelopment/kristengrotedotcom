@@ -1,0 +1,37 @@
+columnSuffix: null
+handle: bodyImage
+instructions: null
+name: 'Body Image'
+searchable: false
+settings:
+  allowSelfRelations: false
+  allowSubfolders: false
+  allowUploads: true
+  allowedKinds: null
+  branchLimit: null
+  defaultPlacement: end
+  defaultUploadLocationSource: 'volume:722ce8a5-2b63-4bbe-9bb8-f47722788c72' # Body Images
+  defaultUploadLocationSubpath: null
+  maintainHierarchy: false
+  maxRelations: 1
+  minRelations: 1
+  previewMode: thumbs
+  restrictFiles: false
+  restrictLocation: false
+  restrictedDefaultUploadSubpath: null
+  restrictedLocationSource: 'volume:87a9d102-046e-444c-a1c1-33b12641482e' # Main Images
+  restrictedLocationSubpath: null
+  selectionLabel: 'Add Image'
+  showCardsInGrid: false
+  showSearchInput: true
+  showSiteMenu: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  sources:
+    - 'volume:722ce8a5-2b63-4bbe-9bb8-f47722788c72' # Body Images
+  targetSiteId: null
+  validateRelatedElements: true
+  viewMode: large
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Assets

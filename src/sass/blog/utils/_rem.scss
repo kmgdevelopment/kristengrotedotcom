@@ -1,0 +1,5 @@
+@use "settings";
+
+@function rem($px) {
+    @return (settings.$base-font-size / $px) * 1rem;
+}

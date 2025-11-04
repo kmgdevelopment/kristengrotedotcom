@@ -1,0 +1,19 @@
+headingLevels:
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+name: 'Body Text'
+toolbar:
+  - heading
+  - bulletedList
+  - numberedList
+  - bold
+  - italic
+  - underline
+  - strikethrough
+  - link
+  - code
+  - findAndReplace
+  - sourceEditing

@@ -1,0 +1,5 @@
+@use "settings"; 
+
+$media-screen-m: 768px;
+$media-screen-l: 1025px;
+$media-screen-xl: settings.$grid-max-width + 1;

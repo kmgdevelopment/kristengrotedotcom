@@ -1,0 +1,55 @@
+{#
+    data: object
+        entry: single entry query
+
+    usage: {{ BlogBody({ entry: entry }) }}
+#}
+
+{% macro BlogBody(data) %}
+    {% for block in data.entry.blogBody.all() %}
+        {% switch block.type.handle %}
+            {# CKEditor #}
+            {% case 'blogRichText' %}
+                <div class="entry-body">
+                    {{ block.richText }}
+                </div>
+
+            {# Code Snippet #}
+            {% case 'blogCodeSnippet' %}
+                <div class="code-snippet">
+                    {# Do Not Indent #}
+                    <pre><code class="language-{{ block.codeLanguage }}">{{ block.codeSnippet }}</code></pre>
+                </div>
+
+            {# Image #}
+            {% case 'blogBodyImage' %}
+                {% set img = block.bodyImage.one() %}
+                {% set retinaWidth = (img.width / 2) | round(0,'floor') %}
+                {% set retinaHeight = (img.height / 2) | round(0, 'floor') %}
+                <div class="body-image">
+                    <img src="{{ img.url() }}" alt="{{ img.alt }}" width="{{ retinaWidth }}" height="{{ retinaHeight }}" />
+                </div>
+
+            {# Button #}
+            {% case 'button' %}
+                {% set buttonClass = null %}
+                {% if block.buttonType == 'video' or block.buttonType == 'github' %}
+                    {% set buttonClass = 'icon' %}
+                {% endif %}
+                <div>
+                    <a class="button{% if buttonClass %} {{ buttonClass }}{% endif %}" href="{{ block.buttonLink }}">
+                        {% if block.buttonType == 'video' %}
+                            <svg><use href="/assets/img/ui/icons/global/symbol-defs.svg#icon-video"></use></svg>
+
+                        {% elseif block.buttonType == 'github' %}
+                            <svg><use href="/assets/img/ui/icons/social/symbol-defs.svg#icon-github"></use></svg>
+
+                        {% endif %}
+
+                        {{ block.buttonLink.label }}
+                    </a>
+                </div>
+
+        {% endswitch %}
+    {% endfor %}
+{% endmacro %}

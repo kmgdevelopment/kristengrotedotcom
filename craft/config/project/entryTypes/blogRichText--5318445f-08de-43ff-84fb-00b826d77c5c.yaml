@@ -1,0 +1,40 @@
+color: null
+description: null
+fieldLayouts:
+  9af9001b-cae4-490f-b1ef-a2f0018e1233:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-10-06T21:46:52+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: ab779b9f-394b-460b-9a5f-e4bcdccbdb9c # Rich Text
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: __blank__
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 91354060-c79e-467c-bffc-252eedd4e08d
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: efc71c73-5f3a-4cef-a784-613bad39a283
+        userCondition: null
+handle: blogRichText
+hasTitleField: false
+icon: align-left
+name: 'Blog Rich Text'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

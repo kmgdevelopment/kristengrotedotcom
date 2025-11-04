@@ -1,0 +1,32 @@
+@use "utils";
+
+.button {
+    @include utils.reset-link;
+    display: inline-block;
+    background-color: var(--color-primary);
+    font-weight: 700;
+    padding: .5em 1em;
+    &, &:link, &:hover, &:visited {
+        color: var(--color-negative);
+    }
+    &:after {
+        content: "→";
+        margin-left: .5em;
+        vertical-align: 8%;
+    }
+}
+
+.button.icon {
+    svg {
+        fill: var(--color-negative);
+        width: 15px;
+        height: 15px;
+        display: block;
+        float: left;
+        margin-right: .75em;
+        margin-top: 6px;
+    }
+    &:after {
+        content: "";
+    }
+}

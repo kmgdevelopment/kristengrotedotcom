@@ -1,0 +1,18 @@
+@use "settings";
+
+@mixin media-screen($size) {
+    $min-width: 1px;
+
+    @if ($size == "m") {
+        $min-width: settings.$media-screen-m;
+    }
+    @if ($size == "l") {
+        $min-width: settings.$media-screen-l;
+    }
+    @if ($size == "xl") {
+        $min-width: settings.$media-screen-xl;
+    }
+    @media screen and (min-width: $min-width) {
+        @content;
+    }
+}
