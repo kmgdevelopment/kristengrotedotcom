@@ -11,6 +11,6 @@ ul, ol {
     }
 }
 code {
-    background-color: #f5f2f0;
+    background-color: light-dark(#f5f2f0, var(--color-chrome-medium));
     padding: .25em;
 }
