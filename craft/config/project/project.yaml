@@ -1,4 +1,4 @@
-dateModified: 1762285954
+dateModified: 1762391799
 email:
   fromEmail: kristen@kristengrote.com
   fromName: kristengrote.com
@@ -43,6 +43,10 @@ meta:
     eca95607-1278-410d-a503-9e860b47ec93: 'Public Schema' # Public Schema
     f5368513-b1f1-4469-a9ae-dbfcc60fa1fa: 'Blog Series' # Blog Series
 plugins:
+  assetrev:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   ckeditor:
     edition: standard
     enabled: true
