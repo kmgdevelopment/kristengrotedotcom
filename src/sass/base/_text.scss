@@ -6,4 +6,5 @@ p, ul, ol {
 }
 code {
   background-color: map.get(settings.$colors, "chrome", "light");
+  white-space: nowrap;
 }

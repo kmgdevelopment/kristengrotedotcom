@@ -21,7 +21,7 @@ previewTargets:
 propagationMethod: all
 siteSettings:
   eb73adb8-d528-42a2-a6ec-9d15818070e7: # kristengrote.com
-    enabledByDefault: true
+    enabledByDefault: false
     hasUrls: true
     template: blog/_entry.twig
     uriFormat: 'blog/{slug}'
