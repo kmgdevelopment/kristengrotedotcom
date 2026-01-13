@@ -22,7 +22,7 @@ propagationMethod: all
 siteSettings:
   eb73adb8-d528-42a2-a6ec-9d15818070e7: # kristengrote.com
     enabledByDefault: true
-    hasUrls: false
-    template: null
-    uriFormat: null
+    hasUrls: true
+    template: blog/series/_entry.twig
+    uriFormat: 'blog/series/{slug}'
 type: channel

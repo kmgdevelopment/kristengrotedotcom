@@ -1,0 +1,19 @@
+{#
+    entries: (craft entries object)
+#}
+{% macro EntryListing(entries) %}
+    <div class="entry-listing">
+        <ul class="layout-grid">
+            {% for entry in entries %}
+                <li>
+                    <a href="{{ entry.url() }}" class="card-preview">
+                        <h2 class="h">{{ entry.title }}</h2>
+                        <small class="date">{{ entry.postDate | date('F j, Y') }}</small>
+                        <p class="summary">{{ entry.postSummary }}</p>
+                        <span class="button">Read Post</span>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endmacro %}

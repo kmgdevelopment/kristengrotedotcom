@@ -37,6 +37,40 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
+          -
+            dateAdded: '2026-01-10T22:36:19+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: d468b09c-d9d5-4249-85c2-742dcb0fb4d5 # Post Summary
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: 'Series Summary'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c7082570-fee7-4aae-8405-da48a3273ca8
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-01-10T22:41:40+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 90f462df-4bab-488f-982f-f28421852073 # Social Preview Image
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 031f3f56-8b47-4c44-a65f-448313e5b458
+            userCondition: null
+            warning: null
+            width: 100
         name: Content
         uid: ff4a35c6-6787-4140-8c86-c35cdf11e160
         userCondition: null

@@ -1,0 +1,36 @@
+{#
+    entries: (craft entries object)
+    parentEntry: (craft entry object)
+#}
+{% macro ListingLayout(entries, parentEntry) %}
+    {% from "_components/blog/layouts/global" import GlobalLayout %}
+    {% from "_components/blog/entry-listing" import EntryListing %}
+
+    {% set body %}
+        {% if parentEntry is not null %}
+            <header class="entry-header">
+                <section class="layout-section">
+                    <small class="flag">
+                        {% switch parentEntry.section %}
+                            {% case 'Blog Series' %} Series
+                        {% endswitch %}
+                    </small>
+                    <h1>{{ parentEntry.title }}</h1>
+                    <p class="summary">{{ parentEntry.postSummary }}</p>
+                </section>
+            </header>
+        {% endif %}
+
+        <section class="layout-section">
+            {{ EntryListing(
+                entries: entries
+            ) }}
+        </section>
+    {% endset %}
+
+    {{ GlobalLayout(
+        body: body,
+        entry: parentEntry
+    ) }}
+
+{% endmacro %}

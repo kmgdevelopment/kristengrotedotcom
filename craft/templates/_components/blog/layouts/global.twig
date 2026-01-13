@@ -1,0 +1,26 @@
+{#
+    body: (html block)
+    entry: (craft entry data)
+#}
+{% macro GlobalLayout(body, entry) %}
+    {% from "_components/blog/document-head" import DocumentHead %}
+    {% from "_components/blog/global-header" import GlobalHeader %}
+    {% from "_components/blog/document-foot" import DocumentFoot %}
+    {% from "_components/blog/global-footer" import GlobalFooter %}
+
+    {{ DocumentHead(
+        entry: entry
+    ) }}
+
+    {{ GlobalHeader() }}
+
+    <main id="main">
+        <article>
+            {{ body }}
+        </article>
+    </main>
+        
+    {{ GlobalFooter() }}
+
+    {{ DocumentFoot() }}
+{% endmacro %}

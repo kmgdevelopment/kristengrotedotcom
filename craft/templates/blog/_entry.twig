@@ -1,90 +1,94 @@
-{% from "_components/blog/document-head" import DocumentHead %}
-{% from "_components/blog/global-header" import GlobalHeader %}
-{% from "_components/blog/document-foot" import DocumentFoot %}
-{% from "_components/blog/global-footer" import GlobalFooter %}
+{% from "_components/blog/layouts/global" import GlobalLayout %}
 {% from "_components/blog/blog-body" import BlogBody %}
 
-{{ DocumentHead({entry: entry}) }}
+{% set body %}
+    <header class="entry-header">
+        <section class="layout-section">
+            <h1>{{ entry.title }}</h1>
+            <p class="date">
+                <span class="post-date">{{ entry.postDate | date('F j, Y') }}</span>
+                {# show a warning if the post is more than a year old #}
+                {% if (entry.postDate|date('U') + 60 * 60 * 24 * 365) < 'now'|date('U') %}
+                    <span class="date-warning">
+                        <svg>
+                            <title>Warning</title>
+                            <use href="/assets/img/ui/icons/global/symbol-defs.svg#icon-warn"></use>
+                        </svg>
+                        This post may be out of date
+                    </span>
+                {% endif %}
+            </p>
+        </section>
+    </header>
+    
+    <div class="layout-entry-body">
+        <div class="layout-section">
+            {{ BlogBody({entry: entry}) }}
+        </div>
+    </div>
 
-{{ GlobalHeader() }}
+    <footer>
+        <div class="layout-section">
+            {% if entry.blogSeries|length %}
+                <aside>
+                    <h3>More in This Series:</h3>
 
-    <main id="main">
-        <article>
-            <header class="entry-header">
-                <section class="layout-section">
-                    <h1>{{ entry.title }}</h1>
-                    <p class="date">{{ entry.postDate | date('F j, Y') }}</p>
-                </section>
-            </header>
-            
-            <div class="layout-entry-body">
-                <div class="layout-section">
-                    {{ BlogBody({entry: entry}) }}
+                    {% set seriesEntries = craft.entries
+                        .section('blog')
+                        .relatedTo(entry.blogSeries.one())
+                        .orderBy('postDate asc')
+                        .all() 
+                    %}
+                    
+                    <ul>
+                        {% for seriesEntry in seriesEntries %}
+                            <li>
+                                {% if seriesEntry.id != entry.id %}
+                                    <a href="{{ seriesEntry.url() }}">
+                                {% endif %}
+
+                                Part {{ loop.index }}: {{ seriesEntry.seriesSubtitle }}
+                                
+                                {% if seriesEntry.id != entry.id %}
+                                    </a>
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </aside>
+            {% endif %}
+
+            <div class="author-byline">
+                <div class="media">
+                    <img src="/assets/img/kristen-grote-avatar_2x.webp" alt="Kristen Grote headshot">
+                </div>
+                <div class="text">
+                    <div class="bio"><b>Kristen Grote</b> has been building websites for over 15 years. She is an expert in HTML, CSS, Craft CMS, and UX-focused Javascript. She enjoys petting dogs and watching extremely campy movies.</div>
+                    <ul class="socials">
+                        <li>
+                            <a href="https://bsky.app/profile/kmgdev.bsky.social">
+                                <svg>
+                                    <title>Bluesky Profile</title>
+                                    <use href="/assets/img/ui/icons/social/symbol-defs.svg#icon-bluesky"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/kristengrote/">
+                                <svg>
+                                    <title>LinkedIn Profile</title>
+                                    <use href="/assets/img/ui/icons/social/symbol-defs.svg#icon-linkedin"></use>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
+        </div>
+    </footer>
+{% endset %}
 
-            <footer>
-                <div class="layout-section">
-                    <aside>
-                        {% if entry.blogSeries|length %}
-                            <h3>More in This Series:</h3>
-
-                            {% set seriesEntries = craft.entries
-                                .section('blog')
-                                .relatedTo(entry.blogSeries.one())
-                                .orderBy('postDate asc')
-                                .all() 
-                            %}
-                            
-                            <ul>
-                                {% for seriesEntry in seriesEntries %}
-                                    <li>
-                                        {% if seriesEntry.id != entry.id %}
-                                            <a href="{{ seriesEntry.url() }}">
-                                        {% endif %}
-
-                                        Part {{ loop.index }}: {{ seriesEntry.seriesSubtitle }}
-                                        
-                                        {% if seriesEntry.id != entry.id %}
-                                            </a>
-                                        {% endif %}
-                                    </li>
-                                {% endfor %}
-                            </u>
-                        {% endif %}
-                    </aside>
-
-                    <div class="author-byline">
-                        <div class="media">
-                            <img src="/assets/img/kristen-grote-avatar_2x.webp" alt="Kristen Grote headshot">
-                        </div>
-                        <div class="text">
-                            <div class="bio"><b>Kristen Grote</b> has been building websites for over 15 years. She is an expert in HTML, CSS, Craft CMS, and UX-focused Javascript. She enjoys petting dogs and watching extremely campy movies.</div>
-                            <ul class="socials">
-                                <li>
-                                    <a href="https://bsky.app/profile/kmgdev.bsky.social">
-                                        <svg>
-                                            <title>Bluesky Profile</title>
-                                            <use href="/assets/img/ui/icons/social/symbol-defs.svg#icon-bluesky"></use>
-                                        </svg>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.linkedin.com/in/kristengrote/">
-                                        <svg>
-                                            <title>LinkedIn Profile</title>
-                                            <use href="/assets/img/ui/icons/social/symbol-defs.svg#icon-linkedin"></use>
-                                        </svg>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-        </article>
-    </main>
-
-{{ GlobalFooter() }}
-
-{{ DocumentFoot() }}
+{{ GlobalLayout(
+    body: body, 
+    entry: entry
+) }}
